@@ -3,6 +3,7 @@ kind: workflow
 name: Test properties resolution
 on:
   workflow_dispatch:
+  workflow_call:
 jobs:
   no_environment:
     steps:
