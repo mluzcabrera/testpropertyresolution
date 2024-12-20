@@ -7,4 +7,4 @@ on:
 
 jobs:
   call_test_properties_resolution:
-    uses: "mluzcabrera/testpropertyresolution/blob/main/.cloudbees/workflows/test-properties-resolution.yaml"
+    uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution.yaml
