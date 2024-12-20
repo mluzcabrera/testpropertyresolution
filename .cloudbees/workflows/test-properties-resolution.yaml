@@ -1,0 +1,26 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Test properties resolution
+on:
+  workflow_dispatch:
+jobs:
+  no_environment:
+    steps:
+      - name: Print properties
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "Property testpropertymlcb: ${{ vars.testpropertymlcb }}"
+          echo "Property testpropertymlcb2: ${{ vars.testpropertymlcb2 }}"
+          echo "Property testpropertymlcbONLYTOP: ${{ vars.testpropertymlcbONLYTOP }}"
+  with_environment:
+    environment: environment_mlcb
+    steps:
+      - name: Print properties
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "Property testpropertymlcb: ${{ vars.testpropertymlcb }}"
+          echo "Property testpropertymlcb2: ${{ vars.testpropertymlcb2 }}"
+          echo "Property testpropertymlcbONLYTOP: ${{ vars.testpropertymlcbONLYTOP }}"
+
