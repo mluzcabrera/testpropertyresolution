@@ -5,17 +5,17 @@ on:
   workflow_call:
 
 jobs:
-  no_environment:
-    steps:
-      - name: Print properties
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
-          echo "Property testpropertymlcb  should be 'testpropertyresolution' : ${{ vars.testpropertymlcb }}"
-          echo "Property testpropertymlcb2 should be 'CloudBees Preprod': ${{ vars.testpropertymlcb2 }}"
-          echo "Property testpropertymlcb3 should be 'mlcb': ${{ vars.testpropertymlcb3 }}"
-          echo "Property testpropertymlcb4 should be 'testpropertyresolution': ${{ vars.testpropertymlcb4 }}"
-          echo "Property testpropertymlcbONLYTOP should be 'CloudBees Preprod': ${{ vars.testpropertymlcbONLYTOP }}"
+  # no_environment:
+  #  steps:
+  #    - name: Print properties
+  #      uses: docker://golang:1.20.3-alpine3.17
+  #      shell: sh
+  #      run: |
+  #        echo "Property testpropertymlcb  should be 'testpropertyresolution' : ${{ vars.testpropertymlcb }}"
+  #        echo "Property testpropertymlcb2 should be 'CloudBees Preprod': ${{ vars.testpropertymlcb2 }}"
+  #        echo "Property testpropertymlcb3 should be 'mlcb': ${{ vars.testpropertymlcb3 }}"
+  #        echo "Property testpropertymlcb4 should be 'testpropertyresolution': ${{ vars.testpropertymlcb4 }}"
+  #        echo "Property testpropertymlcbONLYTOP should be 'CloudBees Preprod': ${{ vars.testpropertymlcbONLYTOP }}"
   with_environment_mlcb:
     environment: environment_mlcb
     steps:
