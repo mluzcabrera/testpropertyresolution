@@ -7,6 +7,7 @@ jobs:
   call_with_env:    
     environment: environment_mlcb
     uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
-  call_without_env:    
+  call_without_env:  
+    environment: environment_mlcb_top
     uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
 
