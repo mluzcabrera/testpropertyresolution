@@ -4,6 +4,13 @@ name: My workflow
 on:
   workflow_dispatch:
 jobs:
-  call_without_env:    
+  wtf:
     environment: environment_mlcb
+    steps:
+      - name: wtf
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "wtf"
+  call_without_env:
     uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
