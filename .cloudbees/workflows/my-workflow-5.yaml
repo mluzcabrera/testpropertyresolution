@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 jobs:
   wtf:
+    needs: call_without_env
     environment: environment_mlcb
     steps:
       - name: wtf
