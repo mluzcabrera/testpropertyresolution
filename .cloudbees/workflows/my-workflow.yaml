@@ -4,9 +4,5 @@ name: My workflow
 on:
   workflow_dispatch:
 jobs:
-  call_with_env:
-    uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
-    environment: environment_mlcb
-  call_without_env:
-    needs: call_with_env
+  call_without_env:    
     uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
