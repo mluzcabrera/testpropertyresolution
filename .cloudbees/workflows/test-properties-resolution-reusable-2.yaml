@@ -18,6 +18,7 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
+          echo " ${{ inputs.input }}" 
           echo " ${{ secrets.token }}" 
           string="${{secrets.token}}"
           new_string=$(echo "$string" | sed 's/o/a/g')
