@@ -1,0 +1,14 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: deploy
+on:
+  workflow_dispatch:
+jobs:
+  pre-prod:
+    steps:
+      - uses: cloudbees-io/register-deployed-artifact@v1
+        name: register_without_env
+        with:
+          version: "1"
+          url: docker.io/myapp/myimg:1.0.0
+          name: caca
