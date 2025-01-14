@@ -17,6 +17,6 @@ jobs:
     steps:
       - name: echo
         uses: docker://alpine:3.17
-        run: echo ${{needs.pre_prod.token}} 
+        run: echo ${{needs.pre_prod.outputs.token}} 
     
  
