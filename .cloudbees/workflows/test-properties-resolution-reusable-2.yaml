@@ -6,6 +6,10 @@ on:
    secrets:
     token:
       required: false
+   inputs:
+    input:
+      required: false
+      type: string
 jobs:
    with_environment_mlcb:
     # environment: environment_mlcb
