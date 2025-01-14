@@ -4,8 +4,19 @@ name: My workflow
 on:
   workflow_dispatch:
 jobs:
-  call_with_env:
-    uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
-    environment: environment_mlcb
-  call_without_env:
-    uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
+  pre_prod:
+    environment: pre_prod
+    steps:
+      - name: mystep
+        uses: docker://alpine:3.17
+        run: echo ${{cloudbees.token}} > $CLOUDBEES_OUTPUTS/token
+    outputs:
+      token: ${{ steps.mystep.outputs.token }}
+  echo:
+    needs: pre_prod
+    steps:
+      - name: echo
+        uses: docker://alpine:3.17
+        run: echo ${{needs.preprod.token}} 
+    
+ 
