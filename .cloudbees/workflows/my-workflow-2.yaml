@@ -7,11 +7,11 @@ jobs:
   pre_prod:
     environment: environment_mlcb
     steps:
-      - name: mystep
+      - id: mystep
         uses: docker://alpine:3.17
         run: echo ${{cloudbees.api.token }} > $CLOUDBEES_OUTPUTS/token
     outputs:
-      token: ${{ steps.step0.outputs.token }}
+      token: ${{ steps.mystep.outputs.token }}
   echo:
     needs: pre_prod
     steps:
