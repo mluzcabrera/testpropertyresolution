@@ -9,3 +9,8 @@ jobs:
     uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
     secrets:
       token: ${{ cloudbees.api.token }}
+  call_without_env_2:    
+    environment: environment_mlcb_top
+    uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
+    secrets:
+      token: ${{ cloudbees.api.token }}
