@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: mystep
         uses: docker://alpine:3.17
-        run: echo ${{cloudbees.api.token} > $CLOUDBEES_OUTPUTS/token
+        run: echo ${{cloudbees.api.token }} > $CLOUDBEES_OUTPUTS/token
     outputs:
       token: ${{ steps.mystep.outputs.token }}
   echo:
