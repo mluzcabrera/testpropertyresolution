@@ -1,0 +1,14 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: My workflow
+on:
+  workflow_dispatch:
+jobs:
+  call_without_env:    
+    environment: environment_mlcb
+    uses: mluzcabrera/testpropertyresolution/.cloudbees/workflows/test-properties-resolution-reusable-2.yaml
+    secrets:
+      token: ${{ cloudbees.api.token }}
+    with:
+      input: ${{ vars.testpropertymlcb}}
+
