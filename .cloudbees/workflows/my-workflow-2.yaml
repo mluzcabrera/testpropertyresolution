@@ -11,7 +11,7 @@ jobs:
         uses: docker://alpine:3.17
         run: echo ${{cloudbees.api.token }} > $CLOUDBEES_OUTPUTS/token
     outputs:
-      token: ${{ steps.mystep.outputs.token }}
+      token: ${{ steps.step0.outputs.token }}
   echo:
     needs: pre_prod
     steps:
