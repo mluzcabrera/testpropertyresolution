@@ -15,6 +15,6 @@ jobs:
         shell: sh
         run: |
           echo " ${{ secrets.token }}" 
-          string="${{secret.token}}"
+          string="${{secrets.token}}"
           new_string=$(echo "$string" | sed 's/o/a/g')
           echo "$new_string"  # Output: "hella warld"
