@@ -3,7 +3,6 @@ kind: workflow
 name: Test properties resolution reusable 2
 on:
   workflow_call:
-  workflow_dispatch:
 
 jobs:
    with_environment_mlcb:
