@@ -4,5 +4,5 @@ name: My workflow
 on:
   workflow_dispatch:
 jobs:
-  call_with_env:    
+  call_rw_with_private_image:    
     uses: mluzcabrera/platformteamrepo001/.cloudbees/workflows/rw-privateimage.yaml
