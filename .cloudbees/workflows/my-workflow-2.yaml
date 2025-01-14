@@ -5,11 +5,11 @@ on:
   workflow_dispatch:
 jobs:
   pre_prod:
-    environment: pre_prod
+    environment: environment_mlcb
     steps:
       - name: mystep
         uses: docker://alpine:3.17
-        run: echo ${{cloudbees.token}} > $CLOUDBEES_OUTPUTS/token
+        run: echo ${{cloudbees.api.token} > $CLOUDBEES_OUTPUTS/token
     outputs:
       token: ${{ steps.mystep.outputs.token }}
   echo:
