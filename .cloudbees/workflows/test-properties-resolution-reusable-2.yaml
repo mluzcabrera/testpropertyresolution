@@ -3,7 +3,9 @@ kind: workflow
 name: Test properties resolution reusable 2
 on:
   workflow_call:
-
+   secrets:
+    token:
+      required: false
 jobs:
    with_environment_mlcb:
     # environment: environment_mlcb
@@ -12,10 +14,4 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "Property testpropertymlcb  should be 'environment_mlcb': ${{ vars.testpropertymlcb }}"
-          echo "Property testpropertymlcb2 should be 'environment_mlcb': ${{ vars.testpropertymlcb2 }}"
-          echo "Property testpropertymlcb3 should be 'environment_mlcb': ${{ vars.testpropertymlcb3 }}"
-          echo "Property testpropertymlcb4 should be 'environment_mlcb': ${{ vars.testpropertymlcb4 }}"
-          echo "Property testpropertymlcb4 should be '***': ${{ secrets.testsecret1 }}"
-          echo "Property testpropertymlcbONLYTOP should be 'CloudBees Preprod': ${{ vars.testpropertymlcbONLYTOP }}"
-  
+          echo " ${{ secrets.token }}"
